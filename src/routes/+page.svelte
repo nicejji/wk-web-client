@@ -1,59 +1,23 @@
-<script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+<script lang="ts">
+	import SvelteIcon from '~icons/carbon/logo-svelte';
+	import NextIcon from '~icons/ri/arrow-right-circle-fill';
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
+<div class="flex w-full h-full items-center p-3 flex-wrap">
+	<div class="flex flex-col">
+		<span class="text-3xl font-bold">Welcome to</span>
+		<img src="/radish.png" class="h-56" alt="logo" />
+		<p>Minimalistic full-featured real-time chat application.</p>
+		<a href="https://kit.svelte.dev" class="flex items-center gap-2">
+			<span class="font-bold">Built with SvelteKit: </span>
+			<SvelteIcon class="text-red-300 text-2xl" />
+		</a>
+	</div>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+	<div class="flex flex-row flex-1 justify-center">
+		<a href="/login" class="flex text-3xl text-success font-bold gap-2">
+			Get started
+			<NextIcon />
+		</a>
+	</div>
+</div>

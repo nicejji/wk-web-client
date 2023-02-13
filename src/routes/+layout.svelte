@@ -1,53 +1,40 @@
 <script>
-	import Header from './Header.svelte';
-	import './styles.css';
+	import '../app.css';
+	import ChatIcon from '~icons/ri/message-3-fill';
+	import MoonIcon from '~icons/ri/moon-clear-fill';
+	import SunIcon from '~icons/ri/sun-fill';
+	import { onMount } from 'svelte';
+	import { themeChange } from 'theme-change';
+
+	onMount(() => {
+		themeChange(false);
+	});
 </script>
 
-<div class="app">
-	<Header />
-
-	<main>
-		<slot />
-	</main>
-
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+<div class="navbar gap-3">
+	<a href="/">
+		<img src="/radish.png" class="h-7" />
+	</a>
+	<button class="btn btn-sm" data-set-theme="catppuccin-mocha" data-act-class="btn-outline">
+		<MoonIcon />
+	</button>
+	<button data-set-theme="catppuccin-latte" data-act-class="btn-outline" class="btn btn-sm">
+		<SunIcon />
+	</button>
+	<button data-set-theme="" data-act-class="btn-outline" class="btn btn-sm"> Auto </button>
 </div>
 
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
+<div class="flex w-full h-full">
+	<slot />
+</div>
 
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
-</style>
+<footer class="footer p-3 bg-base-200 text-base-content">
+	<div class="flex flex-row w-full justify-center gap-7 text-xs">
+		<a href="about">About</a>
+		<a href="developers">Developers</a>
+		<a href="privacy_policy">Privacy Policy</a>
+		<a href="https://github.com/nicejji/minimal_chat" target="_blank" rel="noreferrer">
+			Source code
+		</a>
+	</div>
+</footer>
