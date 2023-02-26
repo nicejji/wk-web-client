@@ -31,26 +31,28 @@
 	$: formValid = fields.every((field) => !field.error);
 </script>
 
-<form method="POST" action="/login">
-	<div class="flex flex-col w-96 gap-3 p-10 items-center">
-		<KeyIcon class="text-2xl" />
-		<div class="divider font-bold text-xl">Authorization</div>
-		{#each fields as { value, type, name, error, placeholder }}
-			<div class="tooltip-error tooltip-bottom" data-tip={error} class:tooltip={value && error}>
-				<input
-					{name}
-					{value}
-					on:input={(e) => (value = e.target.value)}
-					{type}
-					class="input bg-base-300 focus:outline-none"
-					class:input-error={value && error}
-					{placeholder}
-					class:input-success={!error}
-				/>
-			</div>
-		{/each}
-		<div class="divider" />
-		<button class="btn btn-wide btn-success" class:btn-disabled={!formValid}> Log in </button>
+<form method="POST" action="/login" class="w-full">
+	<div class="flex flex-col justify-center items-center h-full w-full">
+		<div class="flex flex-col items-center gap-3">
+			<KeyIcon class="text-2xl" />
+			<div class="divider font-bold text-xl">Authorization</div>
+			{#each fields as { value, type, name, error, placeholder }}
+				<div class="tooltip-error tooltip-bottom" data-tip={error} class:tooltip={value && error}>
+					<input
+						{name}
+						{value}
+						on:input={(e) => (value = e.target.value)}
+						{type}
+						class="input bg-base-300 focus:outline-none"
+						class:input-error={value && error}
+						{placeholder}
+						class:input-success={!error}
+					/>
+				</div>
+			{/each}
+			<div class="divider" />
+			<button class="btn btn-wide btn-success" class:btn-disabled={!formValid}> Log in </button>
+		</div>
 	</div>
 </form>
 

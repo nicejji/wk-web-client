@@ -7,10 +7,9 @@
 	font-family: 'Fira Code', monospace;
 }
 
-body {
-	@apply flex flex-col h-full w-full;
-}
-
+body,
 html {
-	@apply h-screen w-screen;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
 }

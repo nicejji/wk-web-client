@@ -3,7 +3,7 @@
 	import NextIcon from '~icons/ri/arrow-right-circle-fill';
 </script>
 
-<div class="flex w-full h-full items-center p-3 flex-wrap">
+<div class="flex items-center flex-wrap w-full">
 	<div class="flex flex-col">
 		<span class="text-3xl font-bold">Welcome to</span>
 		<img src="/radish.png" class="h-56" alt="logo" />

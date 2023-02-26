@@ -1,26 +1,8 @@
-<script lang="ts">
-	import AvatarEditor from '$lib/UI/AvatarEditor.svelte';
-	import AvatarView from '$lib/UI/AvatarView.svelte';
-	const colors = [
-		-1, -1, 10, 10, 10, 10, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 10, -1, -1, -1, -1,
-		10, -1, -1, 8, 8, 8, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 8, 8, 8, 8, 8, 8, -1, 10, -1,
-		-1, -1, -1, -1, 6, 6, 6, 6, 6, 6, 8, 8, 8, -1, 10, -1, -1, -1, -1, -1, 6, 6, 7, 6, 6, 6, 6, 8,
-		8, -1, 10, -1, -1, -1, -1, 6, 7, 0, 7, 7, 6, 6, 6, 8, 8, -1, 10, -1, -1, -1, 6, 7, 0, 0, 7, 7,
-		6, 6, 6, -1, -1, -1, 10, -1, -1, -1, 6, 0, 0, 0, 7, 7, 6, 6, 6, -1, -1, -1, 10, -1, -1, 6, 7, 0,
-		0, 0, 7, 7, 6, 6, 6, -1, -1, -1, 10, -1, -1, 7, 0, 0, 0, 7, 7, 6, 6, 6, 6, -1, 10, -1, 10, -1,
-		6, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, -1, -1, -1, -1, -1, 6, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, -1, -1,
-		-1, -1, -1, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, -1, -1, 10, -1, -1, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,
-		-1, -1, -1, 10, -1, 10, -1, 6, 6, 6, 6, 6, -1, -1, -1, -1, -1, -1, -1, 10, -1, -1, -1, -1, -1,
-		-1, -1, -1, -1, 10, -1, -1, 10, 10, 10, 10
-	];
-	const x = 5;
+<script>
+	import PixelEditor from '$lib/UI/PixelEditor.svelte';
+	const pixelData = JSON.stringify(
+		Array.from({ length: 16 }, (_) => Array(16).fill('rgba(0, 0, 0, 0)'))
+	);
 </script>
 
-<div class="flex w-full h-full p-5">
-	<div class="flex flex-row gap-3">
-		<AvatarView {colors} class="w-40 h-40 outline-text outline" />
-		<div>
-			<span class="text-3xl font-bold">{'wkiskas'}</span>
-		</div>
-	</div>
-</div>
+<PixelEditor {pixelData} />
