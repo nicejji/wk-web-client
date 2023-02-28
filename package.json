@@ -1,5 +1,5 @@
 {
-	"name": "radish",
+	"name": "wk",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
@@ -38,6 +38,8 @@
 	"type": "module",
 	"dependencies": {
 		"@catppuccin/palette": "^0.1.6",
+		"@types/chroma-js": "^2.4.0",
+		"chroma-js": "^2.4.2",
 		"daisyui": "^2.50.0",
 		"theme-change": "^2.3.0"
 	}

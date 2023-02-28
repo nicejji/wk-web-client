@@ -10,7 +10,7 @@
 	import PickIcon from '~icons/fa6-solid/eye-dropper';
 	import GridIcon from '~icons/ri/grid-line';
 
-	import PixelView from './PixelView.svelte';
+	import PixelView from '$lib/PixelView.svelte';
 
 	export let pixelData: string;
 

@@ -2,7 +2,7 @@
 	import { createEventDispatcher, tick } from 'svelte';
 	import { onMount } from 'svelte';
 
-	import { getCoord, autoResize } from '$lib/UI/utils/canvasUtils';
+	import { getCoord, autoResize } from '$lib/canvasHelpers';
 
 	const dispatch = createEventDispatcher<{
 		[key: string]: { x: number; y: number; color: string };

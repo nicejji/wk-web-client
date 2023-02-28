@@ -4,6 +4,7 @@
 
 	let div: HTMLDivElement;
 
+	// FIX: This causes autoscroll enabling on mobile safari
 	afterUpdate(() => {
 		if (div && messagesChanged) div.scrollTo(0, div.scrollHeight);
 		messagesChanged = false;

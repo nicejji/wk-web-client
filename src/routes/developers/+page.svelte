@@ -12,36 +12,24 @@
 	];
 </script>
 
-<div class="flex flex-col items-center gap-3">
+<div class="flex flex-col items-center gap-3 p-3 h-full w-full">
 	<span class="text-2xl font-bold">Developers</span>
 
 	{#each developers as dev}
-		<div class="card card-compact card-side w-72 bg-base-200">
-			<div class="card-body">
-				<h2 class="card-title">
-					{dev.name}
-					<div class="badge badge-sm badge-success">{dev.role}</div>
-				</h2>
-				<span>{dev.desc}</span>
-				<div class="card-actions justify-start items-center">
-					<span>links:</span>
-					<a
-						rel="noreferrer"
-						target="_blank"
-						class="btn btn-xs btn-info rounded-full"
-						href={dev.github}
-					>
-						<GithubIcon class="text-lg" />
-					</a>
-					<a
-						rel="noreferrer"
-						target="_blank"
-						class="btn btn-xs btn-info rounded-full"
-						href={dev.telegram}
-					>
-						<TelegramIcon class="text-lg" />
-					</a>
-				</div>
+		<div class="w-full bg-base-200 flex flex-col p-3 rounded-lg gap-2">
+			<div class="flex flex-row items-center gap-3">
+				<span class="text-xl font-bold">{dev.name}</span>
+				<div class="badge badge-success">{dev.role}</div>
+			</div>
+			<span>{dev.desc}</span>
+			<div class="flex flex-row items-center gap-3">
+				<span>links:</span>
+				<a rel="noreferrer" target="_blank" class="btn-info rounded-full" href={dev.github}>
+					<GithubIcon class="text-3xl" />
+				</a>
+				<a rel="noreferrer" target="_blank" class="btn-info rounded-full" href={dev.telegram}>
+					<TelegramIcon class="text-3xl" />
+				</a>
 			</div>
 		</div>
 	{/each}
