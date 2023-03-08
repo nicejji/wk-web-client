@@ -1,3 +1,5 @@
+import { variants } from '@catppuccin/palette';
+
 export const getCoord = (e: MouseEvent | TouchEvent, cols: number, rows: number) => {
 	const canvas = e.target as HTMLCanvasElement;
 	const { left, top, width, height } = canvas.getBoundingClientRect();
@@ -30,4 +32,11 @@ export const autoResize = (canvas: HTMLCanvasElement, render: Function) => {
 			}, 300);
 		}
 	});
+};
+
+export const mochaPalette: string[] = Object.entries(variants.mocha).map(([_, v]) => v.hex);
+const choice = <T>(arr: T[]) => arr[Math.floor(Math.random() * arr.length)];
+export const randomPixels = () => {
+	const color_set = Array.from({ length: 3 }, (_) => choice(mochaPalette));
+	return Array.from({ length: 16 }, (_) => Array.from({ length: 16 }, (_) => choice(color_set)));
 };

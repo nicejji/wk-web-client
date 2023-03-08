@@ -1,8 +1,5 @@
 <script lang="ts">
-	import PixelEditor from '$lib/PixelEditor.svelte';
-	const pixelData = JSON.stringify(
-		Array.from({ length: 16 }, (_) => Array(16).fill('rgba(0, 0, 0, 0)'))
-	);
+	import Profile from '$lib/Profile.svelte';
 </script>
 
-<PixelEditor {pixelData} />
+<Profile />

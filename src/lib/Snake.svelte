@@ -12,7 +12,7 @@
 	export let config: Config = {
 		width: 16,
 		height: 16,
-		stones: 3
+		stones: 0
 	};
 
 	let getField = () =>
@@ -22,6 +22,7 @@
 	let field: string[][] = getField();
 	let move: keyof typeof directions;
 	let gameStarted = false;
+	let fps = 10;
 
 	const startGame = () => {
 		gameStarted = true;
@@ -42,7 +43,7 @@
 				gameStarted = false;
 				clearInterval(interval);
 			}
-		}, 77);
+		}, 1000 / fps);
 	};
 </script>
 
@@ -50,7 +51,15 @@
 	{#if gameStarted}
 		<PixelView pixels={field} class={$$props.class} style={$$props.style} />
 	{:else}
-		<div class={$$props.class + ' flex justify-center items-center'}>
+		<div class={$$props.class + ' flex flex-col justify-center items-center gap-5'}>
+			<span class="text-warning font-bold"
+				>{game ? 'Snake length: ' + (game.snake.length - 1) : ''}</span
+			>
+			<div class="input-group justify-center">
+				<button class="btn" on:click={() => fps--}>-</button>
+				<span>{fps} FPS</span>
+				<button class="btn" on:click={() => fps++}>+</button>
+			</div>
 			<button class="btn btn-success" on:click={startGame}>Restart</button>
 		</div>
 	{/if}

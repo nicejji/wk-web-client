@@ -108,3 +108,10 @@ export class Game {
 		return this;
 	}
 }
+
+class MultiplayerGame {
+	config: Config;
+	constructor(config: Config) {
+		this.config = config;
+	}
+}

@@ -26,10 +26,11 @@
 	let isPixelSelected = false;
 	let selectionTimeout: number | void;
 
-	onMount(() => {
+	onMount(async () => {
 		ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 		autoResize(canvas, () => (pixels = pixels));
 		mounted = true;
+		asImage ? await switchMode(true) : 0;
 	});
 
 	const switchMode = async (asImage: boolean) => {
